@@ -8,10 +8,52 @@ body{
     margin-top: 30px;
 } 
 
+/* .nav-bar {
+    padding-left: 10px;
+} */
+
 .jumbotron img{
-    width: 300px;
-    border: 7px solid #665;
-    margin-bottom: 100px;
+    width: 250px;
+    border: 7px solid #bbb;
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 10px 10px black;
+}
+
+.jumbotron {
+    background-image: url(vendor/img/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #bbb;
+    text-shadow: 0px 2px 5px #000;
+    overflow: hidden;
+    height: 500px;
+}
+
+
+.portfolio .thumbnail{
+    opacity: 0;
+    transform: translate(0, -40px);
+    transition: .5s;
+}
+
+.pKiri, .pKanan{
+    opacity: 0;
+    transform: translate(-50px, 0) rotate(15deg);
+    transition: 1s 1s;
+}
+
+.pKanan {
+    transform:translate(50px, 0) rotate(-15deg);
+}
+
+.pKiri.pMuncul, .pKanan.pMuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.portfolio .thumbnail.muncul{
+    opacity: 1;
+    transform: translate(0,0);
 }
 
 hr{

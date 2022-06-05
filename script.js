@@ -12,5 +12,49 @@ $('.page-scroll').on('click', function(b){
     }, 1250,'easeInOutExpo');
 
     b.preventDefault();
+});
+
+
+
+// about akan muncul ketika window di refresh
+$(window).on('load', function(){
+    $('.pKiri').addClass('pMuncul');
+    $('.pKanan').addClass('pMuncul');
+});
+
+// Parallax
+
+
+$(window).scroll(function(){
+    var wScroll = $(this).scrollTop();
+
+    // jumbotron
+    $('.jumbotron img').css({
+        'transform' : 'translate(0px, '+ wScroll/4 +'%)'
+    });
+
+    $('.jumbotron h1').css({
+        'transform' : 'translate(0px, '+ wScroll/2 +'%)'
+    });
+
+    $('.jumbotron p').css({
+        'transform' : 'translate(0px, '+ wScroll +'%)'
+    });
+
+
+    // portfolio
+    if( wScroll > $('.portfolio').offset().top - 250) {
+        $('.portfolio .thumbnail').each(function(i){
+            setTimeout(function(){
+                $('.portfolio .thumbnail').eq(i).addClass('muncul');
+            },300*(i+1))
+        })
+        }else{ console.log("hello world");
+    } 
 
 });
+// About on click
+// $(".about").click(function(){
+//     $('.pKiri').addClass('pMuncul');
+//     $('.pKanan').addClass('pMuncul');
+// });
